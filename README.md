@@ -27,6 +27,9 @@
 }
 ```
 
+七牛云的秘钥在右上角`我的` -> `秘钥管理` 中获取
+找不到的话先登录七牛云然后在浏览器输入[https://portal.qiniu.com/user/key](https://portal.qiniu.com/user/key)
+
 # 版本
 
 遵循MIT协议
