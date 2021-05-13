@@ -9,8 +9,9 @@
 - build:stage 预发布打包，有vconsole
 - view 预发布打包并在本地启动一个web服务器
 - http 进入打包目录并启动web服务器
-- format 格式化html文件
 - qiniu 用七牛云对dist里面的静态文件进行上传
+- format 格式化html的内容并输出到`output`目录下
+- bqf 将`build:stage` `qiniu` `format` 按顺序进行
 
 # 第一次使用请看！！！！
 
