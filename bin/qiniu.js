@@ -2,13 +2,10 @@ const qiniu = require('qiniu')
 const fs = require('fs')
 const { join } = require('path')
 const debug = require('debug')('app:qiniu')
-const accessKey = 'CidmCcGziRO7UOENyCqmG-FQ9E3NJfEvW8G_evac'
-const secretKey = 'qKP4BfkhPOO1E28cXJXNRh-G48V40LYJEXSfN5VJ'
+const { perfix, accessKey, secretKey, bucket } = JSON.parse(fs.readFileSync('./config.json'))
 const mac = new qiniu.auth.digest.Mac(accessKey, secretKey)
-const urlPrefix = 'mqtt_vue_static_'
-
 const options = {
-  scope: 'pengqiangsheng',
+  scope: bucket,
   returnBody: '{"key":"$(key)","hash":"$(etag)","fsize":$(fsize),"bucket":"$(bucket)","name":"$(x:name)"}'
 }
 const putPolicy = new qiniu.rs.PutPolicy(options)
@@ -47,13 +44,13 @@ const upload = (localFile, key, putExtra) => {
 fs.readdirSync(join(__dirname, '../dist/static/js')).reverse().forEach(file => {
   if(file.endsWith('.gz')) return
   let fn = join(__dirname, '../dist/static/js', file)
-  upload(fn, urlPrefix + file, putExtraJS)
+  upload(fn, perfix + file, putExtraJS)
 })
 
 fs.readdirSync(join(__dirname, '../dist/static/css')).reverse().forEach(file => {
   if(file.endsWith('.gz')) return
   let fn = join(__dirname, '../dist/static/css', file)
 
-  upload(fn, urlPrefix + file, putExtraCSS)
+  upload(fn, perfix + file, putExtraCSS)
 })
 
