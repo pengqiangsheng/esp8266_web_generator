@@ -9,7 +9,9 @@
     "build:stage": "vue-cli-service build --mode staging",
     "view": "yarn build:stage && yarn http",
     "http": "cd dist && serve -s -l 99",
-    "format": "yarn build:stage && node bin/format.js",
+    "format": "set DEBUG=app:* && node ./bin/format.js",
+    "qiniu": "set DEBUG=app:* && node ./bin/qiniu.js",
+    "bqf": "yarn build:stage && set DEBUG=app:* && node ./bin/qiniu.js && node ./bin/format.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -35,10 +37,11 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.1.1",
     "less-loader": "^5.0.0",
+    "debug": "^4.3.1",
+    "qiniu": "^7.3.2",
     "script-ext-html-webpack-plugin": "^2.1.4",
     "serve": "^11.3.0",
-    "vue-template-compiler": "^2.6.11",
-    "qiniu": "^7.3.2"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,
