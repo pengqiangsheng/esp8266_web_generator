@@ -1,0 +1,38 @@
+// 背景图片
+.bg-image(@url) {
+  background-image: url(@url);
+}
+
+// 不换行
+.no-wrap() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// 扩展点击区域
+.extend-click() {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+// 单位转换
+// 1rem = fontSize px
+// 1px = (1/fontSize)rem
+@fontSize: 37.5;
+.px2rem(@name, @px){
+  @{name}: @px / @fontSize * 1rem;
+}
+
+// 通过变量方式获取
+// 执行完后在外部可获取@result变量
+.get-rem(@px) {
+  @result: @px / @fontSize * 1rem;
+}

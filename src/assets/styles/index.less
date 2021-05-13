@@ -1,0 +1,29 @@
+@import './reset.less';
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-wrapper .block {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c8c9cc;
+}
+
+// 覆盖vant样式
+@overlay-background-color: rgba(0, 0, 0, .5);
+
+.van-overlay {
+  background-color: @overlay-background-color;
+}
+
+.van-button {
+  font-size: 4.5vw;
+  border-radius: 5px;
+}
