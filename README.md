@@ -1,8 +1,10 @@
-# MQTT Web Client
+# ESP8266/32网站快速开发脚手架 ||  MQTT Web Client
 
-> mqtt web 客户端
+> ESP8266/32网站快速开发脚手架 和 mqtt web客户端 二合一
 
 # 功能
+
+> 如果你熟悉Vue并且会用Vue进行网站开发，那么你可以使用第二个功能
 
 - 1. 生成mqtt web客户端并编译成`arduino`文件
 - 2. esp8266/32 网站快速开发脚手架
