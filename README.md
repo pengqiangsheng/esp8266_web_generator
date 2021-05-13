@@ -12,15 +12,19 @@
 - format 格式化html文件
 - qiniu 用七牛云对dist里面的静态文件进行上传
 
-# 配置文件
+# 第一次使用请看！！！！
 
-打开根目录下的 `config.json` 文件，对如下信息进行修改
+在根目录下将 `config.json.back` 文件改名成 `config.json`，并填入以下信息：
 
-- "perfix": "mqtt.vue.static.", // 文件前缀
-- "domain": "http://img.pqs.guozhaoxi.top/", // 七牛云空间域名
-- "accessKey": "******", // 七牛云Ak
-- "secretKey": "******", // 七牛云Sk
-- "bucket": "*******" // 七牛云对象存储空间名
+```json
+{
+  "perfix": "", // 文件前缀
+  "domain": "", // 七牛云空间域名
+  "accessKey": "", // 七牛云Ak
+  "secretKey": "", // 七牛云Sk
+  "bucket": "" // 七牛云对象存储空间名
+}
+```
 
 # 版本
 
