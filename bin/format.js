@@ -1,5 +1,6 @@
 const fs = require('fs')
 const debug = require('debug')('app:format')
+const { join } = require('path')
 debug('格式化html开始.')
 
 // const command = [...process.argv].pop()
@@ -25,7 +26,6 @@ fs.readFile('./dist/index.html', function (error, data) {
     debug('源文件转化完毕，正在写入...')
 
     const fileName = './output/index-' + randomString(8) + '.html'
-    const fileNameC = './output/mqttIndex-' + randomString(8) + '.h'
     
     deleteAll('./output')
     fs.mkdirSync('./output')
@@ -37,7 +37,12 @@ fs.readFile('./dist/index.html', function (error, data) {
         debug('写入成功，文件生成在: ', fileName)
       }
     })
-    fs.writeFile(fileNameC, 'const char * mqttIndex = ' + '"' + buf + '";', function (error) {
+
+    const fileNameC = './output/webServer.ino'
+    const inoBuf = fs.readFileSync('./bin/webServer.ino.back')
+    const buf2 = inoBuf.toString().replace('replace_pos', buf)
+
+    fs.writeFile(fileNameC, buf2 , function (error) {
       if (error) {
         debug('写入失败...')
       } else {
