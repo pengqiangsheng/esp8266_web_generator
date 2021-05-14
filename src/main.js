@@ -24,9 +24,13 @@ import dayjs from 'dayjs'
 import closeMixin from '@/mixins/close'
 import { List } from 'vant';
 import { Badge } from 'vant';
+import { Tag } from 'vant';
+import { DropdownMenu, DropdownItem } from 'vant';
 
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
 
-
+Vue.use(Tag);
 Vue.use(Badge);
 Vue.use(List);
 Vue.use(Field);
