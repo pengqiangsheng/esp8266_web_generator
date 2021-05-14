@@ -38,9 +38,15 @@ fs.readFile('./dist/index.html', function (error, data) {
       }
     })
 
-    const fileNameC = './output/webServer.ino'
-    const inoBuf = fs.readFileSync('./bin/webServer.ino.back')
-    const buf2 = inoBuf.toString().replace('replace_pos', buf)
+    const fileNameC = `./output/webServer-${randomString(8)}.ino`
+    const inoBuf = fs.readFileSync('./bin/source')
+    const buf2 = inoBuf.toString()
+      .replace('replace_pos', buf)
+      .replace(/\'\+e\+\'/g, '')
+      .replace(/\\n/g, '')
+      .replace(/\'\+n\+\'/g, '')
+      .replace(/\'\+o\+\'/g, '')
+      .replace(/\(: \)/g, '')
 
     fs.writeFile(fileNameC, buf2 , function (error) {
       if (error) {
