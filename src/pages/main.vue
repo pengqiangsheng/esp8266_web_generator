@@ -40,7 +40,7 @@
 				<transition name="van-slide-up">
 					<div v-show="showMore">
 						<div class="btn-wrapper-row2">
-							<van-button block plain type="primary" @click="this.showConfig = true">新建连接</van-button>
+							<van-button block plain type="primary" @click="showConfig = true">新建连接</van-button>
 						</div>
 						<div class="btn-wrapper-row2">
 							<van-button plain type="primary" @click="showMessageList = true" :disabled="list.length === 0">查看消息</van-button>
