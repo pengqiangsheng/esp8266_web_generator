@@ -54,7 +54,7 @@
 				</transition>
 			</div>
 
-			<van-popup v-model="showTopicList" position="left" :style="{ height: '100%', width: '30%', padding: '10px' }">
+			<van-popup v-model="showTopicList" position="left" :style="{ height: '100%', width: '70%', padding: '10px' }">
 				<van-list>
 					<div class="topic-wrapper" v-for="item in subList" :key="item.key" >
 						<van-button block plain type="primary" @click="handleSetPubTopic(item.topic)">{{ item.topic }}</van-button>
@@ -82,7 +82,7 @@
 				</div>
 			</van-popup>
 
-			<van-popup v-model="showUnTopicList" position="right"  :style="{ height: '100%', width: '30%', padding: '10px' }">
+			<van-popup v-model="showUnTopicList" position="right"  :style="{ height: '100%', width: '70%', padding: '10px' }">
 				<van-list>
 					<van-badge v-for="item in subList" :key="item.key" >
 						<div class="topic-wrapper" >

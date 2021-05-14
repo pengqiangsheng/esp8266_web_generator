@@ -3,6 +3,7 @@ node_modules
 /dist
 /output
 config.json
+output*
 
 # local env files
 .env.local
